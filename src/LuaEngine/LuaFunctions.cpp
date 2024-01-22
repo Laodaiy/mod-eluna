@@ -910,6 +910,14 @@ ElunaRegister<Creature> CreatureMethods[] =
     { "MoveWaypoint", &LuaCreature::MoveWaypoint },
     { "UpdateEntry", &LuaCreature::UpdateEntry },
 
+
+    /** -- NPCBOT Start */
+#if defined(AZEROTHCORE) 
+    { "IsNPCBot", &LuaCreature::IsNPCBot },
+    { "GetBotOwner", }
+#endif
+    /** -- NPCBOT End */
+
     { NULL, NULL }
 };
 

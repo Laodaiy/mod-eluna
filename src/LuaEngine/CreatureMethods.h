@@ -393,6 +393,25 @@ namespace LuaCreature
         return 1;
     }
 
+    /** -- NPCBOT Start */
+#if defined(AZEROTHCORE)    
+    int IsNPCBot(lua_State* L, Creature* creature)
+    {
+        Eluna::Push(L, creature->IsNPCBot());
+        return 1;
+    }
+
+    int GetBotOwner(lua_State* L, Creature* creature)
+    {
+        if(!creature->IsNPCBot())
+            return 0;
+            
+        Eluna::Push(L, creature->GetBotOwner());
+        return 1;
+    }
+#endif
+    /** -- NPCBot End */
+
 #if defined(TRINITY) || defined(AZEROTHCORE)
     /**
      * Returns `true` if the [Creature] is an invisible trigger,
