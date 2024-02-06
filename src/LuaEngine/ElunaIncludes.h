@@ -80,6 +80,13 @@
 #include "ArenaTeam.h"
 #endif
 
+/** -- NPCBOT Start */
+#include "botdatamgr.h"
+#include "botmgr.h"
+#include "botcommon.h"
+#include "bot_ai.h"
+/** -- NPCBOT End */
+
 #ifndef CLASSIC
 typedef Opcodes                 OpcodesList;
 #endif
@@ -119,6 +126,14 @@ typedef Opcodes                 OpcodesList;
 #define eGameEventMgr           (sGameEventMgr)
 #define eObjectAccessor()       ObjectAccessor::
 #endif
+
+/** -- NPCBOT Start */
+#if defined AZEROTHCORE
+#define eBotMgr                 (sBotMgr)
+#define eBotDataMgr             (sBotDataMgr)
+#endif
+/** -- NPCBOT End */
+
 
 #ifdef CATA
 #define NUM_MSG_TYPES           NUM_OPCODE_HANDLERS
