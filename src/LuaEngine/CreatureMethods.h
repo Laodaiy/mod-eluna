@@ -542,6 +542,16 @@ namespace LuaCreature
         return 1;
     }
 
+    int GetTalentSpec(lua_State* L, Creature* creature)
+    {
+        if(!creature->IsNPCBot())
+            return 0;
+
+        bot_ai* ai = creature->GetBotAI();
+        Eluna::Push(L, ai->GetSpec());
+        return 1;
+    }
+
     int BotEquipItem(lua_State* L, Creature* creature)
     {
         if(!creature->IsNPCBot())

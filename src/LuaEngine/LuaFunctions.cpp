@@ -920,6 +920,7 @@ ElunaRegister<Creature> CreatureMethods[] =
     { "GetBotOwnerGUID", &LuaCreature::GetBotOwnerGUID },
     { "GetBotClass", &LuaCreature::GetBotClass },
     { "GetBotRoles", &LuaCreature::GetBotRoles },
+    { "GetTalentSpec", &LuaCreature::GetTalentSpec },
     { "IsBotTank", &LuaCreature::IsBotTank },
     { "IsBotOffTank", &LuaCreature::IsBotOffTank },
     { "IsFreeBot", &LuaCreature::IsFreeBot },
