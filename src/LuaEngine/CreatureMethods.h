@@ -630,6 +630,22 @@ namespace LuaCreature
         return 1;
     }
 
+    int GetBotDump(lua_State* L, Creature* creature)
+    {
+        if(!creature->IsNPCBot())
+            return 0;
+
+        bot_ai* ai = creature->GetBotAI();
+        Player* owner = creature->GetBotOwner();
+        const char* dump = ai->BotDump(owner, creature);
+
+        if(!dump)
+            return luaL_argerror(L, 1, "BotDump failed for bot.");
+
+        Eluna::Push(L, dump);
+        return 1;
+    }
+
 // #endif
     /** -- NPCBot End */
 

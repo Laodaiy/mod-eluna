@@ -927,6 +927,7 @@ ElunaRegister<Creature> CreatureMethods[] =
     { "GetBotAverageItemLevel", &LuaCreature::GetBotAverageItemLevel },
     { "GetBotEquipment", &LuaCreature::GetBotEquipment },
     { "GetBotStat", &LuaCreature::GetBotStat },
+    { "GetBotDump", &LuaCreature::GetBotDump },
 
 
     // Setters
