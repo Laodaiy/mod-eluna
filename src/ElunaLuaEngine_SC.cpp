@@ -807,6 +807,11 @@ public:
     {
         sEluna->OnBattlegroundDesertion(player, type);
     }
+
+    void OnCreatureKilledByPet(Player* player, Creature* killed) override
+    {
+        sEluna->OnCreatureKilledByPet(player, killed);
+    }
 };
 
 class Eluna_ServerScript : public ServerScript
