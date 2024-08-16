@@ -928,6 +928,33 @@ ElunaRegister<Creature> CreatureMethods[] =
     { "MoveWaypoint", &LuaCreature::MoveWaypoint },
     { "UpdateEntry", &LuaCreature::UpdateEntry },
 
+
+    /** -- NPCBOT Start */
+#if defined(AZEROTHCORE)
+
+    // Getters & Flags
+    { "IsNPCBot", &LuaCreature::IsNPCBot },
+    { "GetBotOwner", &LuaCreature::GetBotOwner },
+    { "GetBotOwnerGUID", &LuaCreature::GetBotOwnerGUID },
+    { "GetBotClass", &LuaCreature::GetBotClass },
+    { "GetBotRoles", &LuaCreature::GetBotRoles },
+    { "GetTalentSpec", &LuaCreature::GetTalentSpec },
+    { "IsBotTank", &LuaCreature::IsBotTank },
+    { "IsBotOffTank", &LuaCreature::IsBotOffTank },
+    { "IsFreeBot", &LuaCreature::IsFreeBot },
+    { "GetBotAverageItemLevel", &LuaCreature::GetBotAverageItemLevel },
+    { "GetBotEquipment", &LuaCreature::GetBotEquipment },
+    { "GetBotStat", &LuaCreature::GetBotStat },
+    { "GetBotDump", &LuaCreature::GetBotDump },
+
+
+    // Setters
+    { "BotEquipItem", &LuaCreature::BotEquipItem },
+    { "BotCanEquipItem", &LuaCreature::BotCanEquipItem },
+    { "BotUnequipBotItem", &LuaCreature::BotUnequipItem },
+#endif
+    /** -- NPCBOT End */
+
     { NULL, NULL }
 };
 
