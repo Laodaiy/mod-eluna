@@ -1,0 +1,17 @@
+name: tag-release
+on:
+    workflow_run:
+        workflows: ["core-build"]
+        types:
+          - completed
+jobs:
+    release-on-push:
+      runs-on: ubuntu-latest
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      steps:
+        - name: Release on Push
+          uses: rymndhng/release-on-push-action@master
+          with:
+            bump_version_scheme: minor
