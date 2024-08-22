@@ -16,8 +16,9 @@
  */
 
 #include "Chat.h"
+#include "ElunaInstanceAI.h"
 #include "ElunaEventMgr.h"
-#include "Log.h"
+#include "Logging/Log.h"
 #include "LuaEngine.h"
 #include "Pet.h"
 #include "Player.h"
@@ -237,10 +238,10 @@ class Eluna_AllMapScript : public AllMapScript
 public:
     Eluna_AllMapScript() : AllMapScript("Eluna_AllMapScript") { }
 
-    void OnBeforeCreateInstanceScript(InstanceMap* instanceMap, InstanceScript* instanceData, bool /*load*/, std::string /*data*/, uint32 /*completedEncounterMask*/) override
+    void OnBeforeCreateInstanceScript(InstanceMap* instanceMap, InstanceScript** instanceData, bool /*load*/, std::string /*data*/, uint32 /*completedEncounterMask*/) override
     {
         if (instanceData)
-            *instanceData = sEluna->GetInstanceData(instanceMap);
+            *instanceData = static_cast<InstanceScript*>(sEluna->GetInstanceData(instanceMap));
     }
 
     void OnDestroyInstance(MapInstanced* /*mapInstanced*/, Map* map) override
