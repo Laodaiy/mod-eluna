@@ -2480,25 +2480,26 @@ namespace LuaPlayer
         Unit* unit = Eluna::CHECKOBJ<Unit>(L, 2);
 
 #if defined TRINITY || AZEROTHCORE
-        AuctionHouseEntry const* ahEntry = AuctionHouseMgr::GetAuctionHouseEntry(unit->GetFaction());
+        // AuctionHouseEntry const* ahEntry = AuctionHouseMgr::GetAuctionHouseFactionFromHouseId(static_cast<AuctionHouseId>(unit->GetFaction()));
+        // AuctionHouseEntry const* ahEntry = AuctionHouseMgr::GetAuctionHouseEntry(unit->GetFaction());
 #else
-        AuctionHouseEntry const* ahEntry = AuctionHouseMgr::GetAuctionHouseEntry(unit);
+       // AuctionHouseEntry const* ahEntry = AuctionHouseMgr::GetAuctionHouseEntry(unit);
 #endif
-        if (!ahEntry)
-            return 0;
+        // if (!ahEntry)
+        //     return 0;
 
-        WorldPacket data(MSG_AUCTION_HELLO, 12);
-        data << unit->GET_GUID();
+        // WorldPacket data(MSG_AUCTION_HELLO, 12);
+        // data << unit->GET_GUID();
 #ifdef TRINITY
         data << uint32(ahEntry->ID);
 #else
-        data << uint32(ahEntry->houseId);
+ //       data << uint32(ahEntry->houseId);
 #endif
-        data << uint8(1);
+        // data << uint8(1);
 #ifdef CMANGOS
-        player->GetSession()->SendPacket(data);
+        // player->GetSession()->SendPacket(data);
 #else
-        player->GetSession()->SendPacket(&data);
+        // player->GetSession()->SendPacket(&data);
 #endif
         return 0;
     }
@@ -3804,8 +3805,9 @@ namespace LuaPlayer
     {
         std::string msg = Eluna::CHECKVAL<std::string>(L, 2);
         if (msg.length() > 0)
-        player->GetSession()->SendNotification("%s", msg.c_str());
-            // ChatHandler(player->GetSession()).SendNotification("{}", msg); --
+
+        // player->GetSession()->SendNotification("%s", msg.c_str());
+        ChatHandler(player->GetSession()).SendNotification("{}", msg);
         return 0;
     }
 

@@ -61,7 +61,7 @@ namespace LuaUnit
         unit->ApplySpellImmune(0, 5, immunity, apply);
         return 0;
     }
-    
+
     /**
      * The [Unit] modifies a specific stat
      *
@@ -139,7 +139,7 @@ namespace LuaUnit
      */
     int IsRooted(lua_State* L, Unit* unit)
     {
-        Eluna::Push(L, unit->isInRoots() || unit->HasUnitMovementFlag(MOVEMENTFLAG_ROOT));
+        Eluna::Push(L, unit->HasRootAura() || unit->HasUnitMovementFlag(MOVEMENTFLAG_ROOT));
 
         return 1;
     }

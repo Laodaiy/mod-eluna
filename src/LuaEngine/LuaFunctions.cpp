@@ -41,6 +41,11 @@ extern "C"
 #include "ItemTemplateMethods.h"
 #include "RollMethods.h"
 
+// If this is runnong on NPCBOTS core fork include methods for NpcBot management in Lua
+#if defined(MOD_PRESENT_NPCBOTS)
+#include "NpcBotMethods.h"
+#endif
+
 luaL_Reg GlobalMethods[] =
 {
     // Hooks
@@ -930,28 +935,28 @@ ElunaRegister<Creature> CreatureMethods[] =
 
 
     /** -- NPCBOT Start */
-#if defined(AZEROTHCORE)
+#if defined(AZEROTHCORE) && defined(MOD_PRESENT_NPCBOTS)
 
     // Getters & Flags
-    { "IsNPCBot", &LuaCreature::IsNPCBot },
-    { "GetBotOwner", &LuaCreature::GetBotOwner },
-    { "GetBotOwnerGUID", &LuaCreature::GetBotOwnerGUID },
-    { "GetBotClass", &LuaCreature::GetBotClass },
-    { "GetBotRoles", &LuaCreature::GetBotRoles },
-    { "GetTalentSpec", &LuaCreature::GetTalentSpec },
-    { "IsBotTank", &LuaCreature::IsBotTank },
-    { "IsBotOffTank", &LuaCreature::IsBotOffTank },
-    { "IsFreeBot", &LuaCreature::IsFreeBot },
-    { "GetBotAverageItemLevel", &LuaCreature::GetBotAverageItemLevel },
-    { "GetBotEquipment", &LuaCreature::GetBotEquipment },
-    { "GetBotStat", &LuaCreature::GetBotStat },
-    { "GetBotDump", &LuaCreature::GetBotDump },
+    { "IsNPCBot", &LuaNpcBot::IsNPCBot },
+    { "GetBotOwner", &LuaNpcBot::GetBotOwner },
+    { "GetBotOwnerGUID", &LuaNpcBot::GetBotOwnerGUID },
+    { "GetBotClass", &LuaNpcBot::GetBotClass },
+    { "GetBotRoles", &LuaNpcBot::GetBotRoles },
+    { "GetTalentSpec", &LuaNpcBot::GetTalentSpec },
+    { "IsBotTank", &LuaNpcBot::IsBotTank },
+    { "IsBotOffTank", &LuaNpcBot::IsBotOffTank },
+    { "IsFreeBot", &LuaNpcBot::IsFreeBot },
+    { "GetBotAverageItemLevel", &LuaNpcBot::GetBotAverageItemLevel },
+    { "GetBotEquipment", &LuaNpcBot::GetBotEquipment },
+    { "GetBotStat", &LuaNpcBot::GetBotStat },
+    { "GetBotDump", &LuaNpcBot::GetBotDump },
 
 
     // Setters
-    { "BotEquipItem", &LuaCreature::BotEquipItem },
-    { "BotCanEquipItem", &LuaCreature::BotCanEquipItem },
-    { "BotUnequipBotItem", &LuaCreature::BotUnequipItem },
+    { "BotEquipItem", &LuaNpcBot::BotEquipItem },
+    { "BotCanEquipItem", &LuaNpcBot::BotCanEquipItem },
+    { "BotUnequipBotItem", &LuaNpcBot::BotUnequipItem },
 #endif
     /** -- NPCBOT End */
 
