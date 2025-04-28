@@ -1,22 +1,9 @@
-
-# ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) Azeroth Core Module
-
-## mod-eluna
-
-![Latest Release](https://img.shields.io/github/v/release/araxiaonline/mod-eluna?label=current%20version)
-![GitHub Release Date](https://img.shields.io/github/release-date/araxiaonline/mod-eluna)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/araxiaonline/mod-eluna/build-release.yml?branch=araxia-main&event=push&label=build%20status)
-
-<p align="left">
-  <img src="https://github.com/araxiaonline/docs/blob/main/docs/media/logo-sm.png?raw=true" alt="Araxia Online" width="70" style="vertical-align: middle;"/>
-  <span style="font-size: 20px; vertical-align: middle;">Player Tested and Modified By Araxia Online</span>
-</p>
-
-## About
 ### [![Eluna](src/LuaEngine/docs/Eluna.png)](https://github.com/ElunaLuaEngine/Eluna)
 
+## About
+
 Eluna Lua Engine &copy; is a lua engine embedded to World of Warcraft emulators. Eluna supports MaNGOS, CMaNGOS, TrinityCore and AzerothCore.
-We are currently working hard to make Eluna better from inside and outside.
+We are currently working hard to make Eluna better from inside and outside.  
 
 If you are having trouble with installation or scripts, please feel free to open an issue.
 For documentation and reference see [Eluna API (AC version)](https://www.azerothcore.org/pages/eluna/index.html) and [Lua reference manual](http://www.lua.org/manual/5.2/).
@@ -34,6 +21,7 @@ The official Azerothcore Discord server offers a channel dedicated to lua develo
     <img src="https://img.shields.io/badge/discord-join-7289DA.svg?logo=discord&longCache=true&style=flat" />
 </a>
 
+# ![logo](https://raw.githubusercontent.com/azerothcore/azerothcore.github.io/master/images/logo-github.png) mod-eluna for AzerothCore
 - Latest build status with azerothcore: [![Build Status](https://github.com/azerothcore/mod-eluna/workflows/core-build/badge.svg?branch=master&event=push)](https://github.com/azerothcore/mod-eluna)
 
 [english](README.md) | [中文说明](README_CN.md) | [Español](README_ES.md)
@@ -60,7 +48,7 @@ git clone https://github.com/azerothcore/mod-eluna.git mod-eluna
 
 You need to run the cmake again and rebuild the project.
 
-Eluna API for AC:
+Eluna API for AC: 
 [https://www.azerothcore.org/pages/eluna/index.html](https://www.azerothcore.org/pages/eluna/index.html)
 
 
